@@ -1,0 +1,60 @@
+<div id="container" class="container-fluid p-0" (window:resize)="onResize($event)">
+    <div id="header">
+        <a id="logo" routerLink="/login">
+            <img src="../../../../assets/img/logo.png" alt="">
+            <h1>SocialNet</h1>
+        </a>
+        <h1 id="textoHeader">Brinde a las personas el poder de construir una comunidad y acercar el mundo.</h1>
+    </div>
+    <div id="content">
+        <h1>SocialNet</h1>
+        <h3>Ayudamos a las personas a conectarse con amigos y familiares, encontrar comunidades y hacer crecer sus negocios.</h3>
+        <div id="carousel">
+            <div id="slider">
+                <span><i class="fas fa-chevron-circle-left" (click)="prev()"></i></span>
+                <div class="tarjeta color1 animate__animated" *ngIf="cartas == 0" [ngClass]="animacion">
+                    <img src="../../../assets/img/virginiaCard.png">
+                    <p>"It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."</p>
+                    <small>Virginia T., Diseñadora Grafica</small>
+                </div>
+                <div class="tarjeta color2 animate__animated" *ngIf="(cartas == 1 && width < 767) || (cartas == 0 && width > 767)" [ngClass]="animacion">
+                    <img src="../../../assets/img/joanCard.png">
+                    <p>"It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."</p>
+                    <small>Joan R., Ingeniero de Software</small>
+                </div>
+                <div class="tarjeta color1 animate__animated" *ngIf="(cartas == 2 && width < 767) || (cartas == 1 && width > 767)" [ngClass]="animacion" [ngStyle]="{'background-color': width > 767 ? '#ffeeee':'default'}">
+                    <img src="../../../assets/img/barbaCard.png">
+                    <p>"It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."</p>
+                    <small>Steven C., Gerente de Ingeniería</small>
+                </div>
+                <div class="tarjeta color2 animate__animated" *ngIf="(cartas == 3 && width < 767) || (cartas == 1 && width > 767)" [ngClass]="animacion" [ngStyle]="{'background-color': width > 767 ? '#fec8c8':'default'}">
+                    <img src="../../../assets/img/chinoCard.png">
+                    <p>"It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."</p>
+                    <small>Alberto B., Gerente de Políticas Públicas</small>
+                </div>
+                <span><i class="fas fa-chevron-circle-right" (click)="next()"></i></span>
+            </div>
+            <div id="posicion">
+                <span><i class="fas fa-minus" [ngClass]="{activo: cartas == 0, inactivo: cartas != 0}"></i></span>
+                <span><i class="fas fa-minus" [ngClass]="{activo: cartas == 1, inactivo: cartas != 1}"></i></span>
+                <span><i class="fas fa-minus" *ngIf="width < 767" [ngClass]="{activo: cartas == 2, inactivo: cartas != 2}"></i></span>
+                <span><i class="fas fa-minus" *ngIf="width < 767" [ngClass]="{activo: cartas == 3, inactivo: cartas != 3}"></i></span>
+            </div>
+        </div>
+        <div id="descargar">
+            <h5>Descargar para iOS/Android.</h5>
+            <a routerLink=""><img src="../../../assets/img/descargar.png" alt="Descargar App"></a>
+        </div>
+    </div>
+    <footer>
+        <a id="logoFooter" routerLink="/login">
+            <img src="../../../../assets/img/logo.png" alt="">
+            <h1>SocialNet</h1>
+        </a>
+        <div id="enlaces">
+            <p>Términos del servicio</p>
+            <p>Politicas de cookies</p>
+        </div>
+        <small>©2021 SocialNet</small>
+    </footer>
+</div>

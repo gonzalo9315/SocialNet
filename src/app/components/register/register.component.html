@@ -1,0 +1,95 @@
+<div class="container-fluid" id="container">
+    <div id="content">
+        <form
+          [formGroup]="form"
+          (ngSubmit)="register()"
+        >
+            <h1 class="focus-in-expand" id="logo">SocialNet</h1>
+            <div class="form-group">
+                <div>
+                  <input
+                    class="form-control"
+                    autocomplete="off"
+                    formControlName="email"
+                    type="email"
+                    placeholder="Correo Electronico"
+                    [ngClass]="invalid('email') ? 'error' : 'success'"
+                  >
+                  <small *ngIf="invalid('email')">Introduce un email valido</small>
+                </div>
+                <div>
+                  <input
+                    class="form-control"
+                    formControlName="password"
+                    type="password"
+                    placeholder="Contraseña"
+                    [ngClass]="invalid('password') ? 'error' : 'success'"
+                  >
+                  <small *ngIf="invalid('password')">Introduce una contraseña valida</small>
+                </div>
+            </div>
+            <div class="form-group">
+              <div>
+                <input
+                  class="form-control"
+                  formControlName="nombre"
+                  type="text"
+                  placeholder="Nombre"
+                  [ngClass]="invalid('nombre') ? 'error' : 'success'"
+                >
+                <small *ngIf="invalid('nombre')">Introduce un nombre valido</small>
+              </div>
+              <div>
+                <input
+                  class="form-control"
+                  formControlName="apellidos"
+                  type="text"
+                  placeholder="Apellidos"
+                  [ngClass]="invalid('apellidos') ? 'error' : 'success'"
+                >
+                <small *ngIf="invalid('apellidos')">Introduce un apellido valido</small>
+              </div>
+            </div>
+            <div class="form-group">
+              <div>
+                <input
+                  class="form-control"
+                  type="date"
+                  formControlName="fecha"
+                  placeholder="Fecha de nacimiento"
+                  [ngClass]="invalid('fecha') ? 'error' : 'success'"
+                >
+                <small *ngIf="invalid('fecha')">Introduce una fecha valido</small>
+              </div>
+              <div>
+                <select
+                  class="form-select"
+                  formControlName="genero"
+                  [ngClass]="invalid('genero') ? 'error' : 'success'"
+                >
+                    <option hidden selected>Género</option>
+                    <option value="hombre ">Hombre</option>
+                    <option value="mujer ">Mujer</option>
+                </select>
+                <small *ngIf="invalid('genero')">Introduce un género valido</small>
+              </div>
+            </div>
+            <button type="submit " class="btn">Crear cuenta</button>
+            <div id="hrs">
+                <hr>
+                <p>O</p>
+                <hr>
+            </div>
+            <div id="login">
+                <p>¿Ya tienes cuenta? <a routerLink="/login">Inicia sesión</a></p>
+            </div>
+            <div id="terms">
+                <p class="small ion-text-left ">Al hacer clic en el botón, estas manifestando estar de acuerdo con las condiciones de uso y política de privacidad.</p>
+            </div>
+        </form>
+    </div>
+    <footer>
+        <a routerLink="/info">Información</a>
+        <p>© 2021 SocialNet</p>
+    </footer>
+</div>

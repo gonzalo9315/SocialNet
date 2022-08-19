@@ -1,0 +1,253 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/animaciones.scss';
+//Minute devices
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    min-height: 100vh;
+    background: rgb(195, 63, 95) !important;
+    background: linear-gradient(90deg, rgba(195, 63, 95, 1) 20%, rgba(196, 59, 71, 1) 68%) !important;
+    #content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 100vw;
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 80%;
+            background-color: transparent;
+            #logo {
+                text-align: center;
+                margin: 0 50px 0 20px;
+                padding-top: 0.2em;
+                padding-left: 0.5em;
+                width: 100vw;
+                font-family: $primaryFont;
+                font-size: 4em;
+                color: white;
+            }
+            .form-group {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                div {
+                  text-align: center;
+                  input,
+                  select {
+                      width: 100%;
+                      height: 2.5em;
+                      margin-top: 0.8em;
+                      border: none;
+                      background-color: rgb(255, 255, 255, 0.09);
+                      color: white;
+                      option {
+                          color: black;
+                      }
+                  }
+                  input:focus,
+                  select:focus {
+                      box-shadow: none;
+                      border: 1px solid rgb(255, 255, 255, 1);
+                  }
+                   ::placeholder {
+                      color: white;
+                      opacity: 1;
+                      font-size: 0.9em !important;
+                  }
+                  input[type=date],
+                  select {
+                      font-size: 0.8em !important;
+                  }
+                  small {
+                    font-size: 0.7em;
+                    color: rgb(100, 0, 0);
+                  }
+                }
+            }
+            button {
+                margin-top: 0.8em;
+                width: 100%;
+                height: 2.4em;
+                border: 1px solid rgb(255, 255, 255, 0.3);
+                background-color: transparent;
+                font-size: 0.9em;
+                color: rgb(255, 255, 255, 0.3);
+            }
+            button:hover {
+                border-color: white;
+                color: white;
+            }
+            #hrs {
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                hr {
+                    margin: 1.7em 5px 0 5px;
+                    width: 100%;
+                    height: 1.5px;
+                    border-top: 1px solid rgb(255, 255, 255, 1);
+                    border-bottom: 1px solid rgb(255, 255, 255, 1);
+                }
+                p {
+                    margin-top: 1em;
+                    color: white;
+                }
+            }
+            #login {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-top: 0.6em;
+                height: 40px;
+                width: 100%;
+                border: 1px solid rgb(255, 255, 255, 0.3);
+                border-radius: 4px;
+                background-color: transparent;
+                p {
+                    margin: 0;
+                    font-size: 0.9em;
+                    color: white;
+                }
+                a {
+                    font-size: 0.9em;
+                    color: $primaryColor;
+                }
+            }
+            #terms {
+                margin-top: 1.5em;
+                text-align: center;
+                font-size: 0.8em;
+                color: white;
+            }
+        }
+    }
+    footer {
+        text-align: center;
+        margin-top: 0.5em;
+        padding-top: 3px;
+        width: 100vw;
+        border: 1px solid;
+        border-color: rgb(255, 255, 255, 0.3);
+        background-color: rgb(255, 255, 255, 0.05);
+        a,
+        p {
+            font-size: 0.9em;
+        }
+        a {
+            color: white;
+        }
+        a:hover {
+            color: $primaryColor;
+        }
+        p {
+            margin-top: 5px;
+            color: white;
+        }
+    }
+    a {
+        text-decoration: none;
+    }
+}
+
+//Small devices
+@media (min-width: 375px) {
+    #container {
+        font-size: 18px;
+         ::placeholder {
+            font-size: 1.1em !important;
+        }
+    }
+}
+
+//Medium devices
+@media (min-width: 768px) {
+    #container {
+        font-size: 20px;
+        form {
+            width: 70% !important;
+             ::placeholder {
+                font-size: 1.5em !important;
+            }
+        }
+    }
+}
+
+//Large devices
+@media (min-width: 992px) and (min-height: 767px) {
+    #container {
+        min-height: -webkit-fill-available !important;
+        font-size: calc(2.1vh - 0.05vw);
+        background: none !important;
+        #content {
+            margin-top: 5%;
+            height: 70vh;
+            background: url('../../../assets/img/tablet.png') no-repeat center !important;
+            background-size: contain !important;
+            form {
+                justify-content: center;
+                max-width: 50% !important;
+                #logo {
+                    padding-top: 0 !important;
+                }
+                .form-group {
+                    flex-direction: row !important;
+                    justify-content: center;
+                    // margin-bottom: calc(1.3vh - 0.1vw);
+                    // height: calc(4.8vh - 0.1vw);
+                    div {
+                      input,
+                      select {
+                          margin: 5px;
+                          width: 30vh !important;
+                          height: calc(4.8vh - 0.1vw) !important;
+                      }
+                      ::placeholder {
+                        font-size: calc(1.6vh) !important;
+                      }
+                      input[type=date],
+                      select {
+                          font-size: calc(1.6vh) !important;
+                      }
+                      small {
+                        display: inline-block;
+                        padding: 0;
+                        margin-top: 0;
+                      }
+                    }
+                }
+                button,
+                #hrs,
+                #login {
+                    width: 61vh !important;
+                    height: calc(4.8vh - 0.1vw);
+                }
+                #terms {
+                    width: 61vh;
+                }
+            }
+        }
+        footer {
+            margin: 0 !important;
+            padding: 0 !important;
+            border: none;
+            background-color: transparent;
+            p {
+                margin-top: 10px;
+            }
+        }
+    }
+}
+
+.error {
+  border: 1px solid rgba(156, 0, 0, 0.7) !important;
+  background-color: rgb(100, 0, 0, 0.7) !important;
+}
+
+.success {
+  border: none;
+}

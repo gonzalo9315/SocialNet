@@ -1,0 +1,12 @@
+@import 'variables.scss';
+html,
+body {
+    margin: 0;
+    min-height: 100%;
+    background: rgb(195, 63, 95);
+    background: linear-gradient(90deg, rgba(195, 63, 95, 0.4990371148459384) 50%, rgba(196, 59, 71, 0.5018382352941176) 60%);
+}
+.custom-tooltip {
+  background-color: rgba(212, 12, 12, 0.9) !important;
+  font-size: 0.7em;
+}
